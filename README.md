@@ -38,23 +38,23 @@ intent-travel-search-nlp/
 
 ## How to Run
 
-Run the notebooks **in order** — each one builds on the outputs of the previous.
+Run the notebooks **in order** - each one builds on the outputs of the previous.
 
-### Notebook 1 — Build Dataset
+### Notebook 1: Build Dataset
 `Day1_2_Build_Travel_Intent_Dataset.ipynb`
 - Downloads the ATIS benchmark from HuggingFace
 - Maps 17 ATIS intents to 5 travel categories
 - Generates 8,000 custom travel queries via template-based slot filling
 - Saves train/val/test splits (80/10/10) to Google Drive
 
-### Notebook 2 — Fine-Tune BERT
+### Notebook 2: Fine-Tune BERT
 `Day3_5_FineTune_BERT_Travel_Intent.ipynb`
 - Loads splits from Notebook 1
 - Fine-tunes `bert-base-uncased` on the combined 11,096-sample dataset
 - Hyperparameters: lr=2e-5, batch=32, epochs=4, weight_decay=0.01, warmup_steps=100, max_length=64
 - Generates Table V, confusion matrix, and training curves for the paper
 
-### Notebook 3 — Prompt Pipeline & Evaluation
+### Notebook 3: Prompt Pipeline & Evaluation
 `Week2_Prompt_Pipeline_Hallucination_Eval.ipynb`
 - Implements the 4-layer prompt pipeline (System Grounding → RAG → Schema → CoVe)
 - Runs hallucination evaluation across 200 queries × 3 configurations
@@ -67,8 +67,8 @@ Run the notebooks **in order** — each one builds on the outputs of the previou
 - Python 3.10+
 - Google Colab (free T4 GPU sufficient for Notebook 2)
 - HuggingFace Transformers v4.x
-- Gemini API key (free tier) — for Notebook 3
-- OpenWeather API key (free tier) — for Notebook 3
+- Gemini API key (free tier) - for Notebook 3
+- OpenWeather API key (free tier) - for Notebook 3
 
 Install dependencies (handled inside each notebook):
 ```bash
